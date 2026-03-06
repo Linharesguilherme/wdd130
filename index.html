@@ -1,14 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 130 | Personal Homepage</title>
-</head>
-<body>
-    <h1>Welcome to WDD 130.</h1>
-    <p>This page will become your homepage for the course. You will remove this text and replace it with your own personal details.</p>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Guilherme Linhares | WDD130</title>
+    <style>
+        .scanlines {
+            background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
 
-    <img src="images/salt-lake-temple.jpg" alt="The Salt Lake Temple.">
+        .crt-text {
+            text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 0.97;
+            }
+
+            5% {
+                opacity: 0.85;
+            }
+
+            10% {
+                opacity: 0.99;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .crt-monitor {
+            animation: flicker 0.15s infinite;
+        }
+
+        .glitch:hover {
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(2px, -2px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        .pip-nav-item {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pip-nav-item:hover,
+        .pip-nav-item.active {
+            background: #22c55e;
+            color: #000;
+            padding-left: 8px;
+        }
+
+        .pip-nav-item::before {
+            content: ">";
+            opacity: 0;
+            margin-right: 4px;
+        }
+
+        .pip-nav-item:hover::before,
+        .pip-nav-item.active::before {
+            opacity: 1;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .sub-item {
+            padding-left: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body
+  class="bg-[#0a0f0a] text-green-500 font-mono min-h-screen flex flex-col overflow-hidden relative crt-monitor">
+
+    <div class="absolute inset-0 scanlines opacity-30 z-50"></div>
+
+    <header class="p-6 border-b-2 border-green-900/50 bg-green-950/10 z-10">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="font-black tracking-widest crt-text text-xl animate-pulse">Home Page</div>
+            <div class="flex gap-8">
+                <a href="#" onmouseenter="playBeep(440, 0.05)"
+                  class="hover:bg-green-500 hover:text-black px-3 py-1 transition-all border border-transparent hover:border-green-400">HOME</a>
+                <a href="wwr/" onmouseenter="playBeep(440, 0.05)"
+                  class="hover:bg-green-500 hover:text-black px-3 py-1 transition-all border border-transparent hover:border-green-400">Rafting
+                    Website</a>
+            </div>
+        </nav>
+    </header>
+
+    <main
+      class="container mx-auto flex-grow flex flex-col md:flex-row items-center justify-center gap-12 p-8 z-10">
+
+        <div class="relative group cursor-crosshair" onclick="playBeep(150, 0.1)">
+            <div class="absolute -inset-4 border-2 border-green-500/30 rounded-xl animate-pulse">
+            </div>
+            <div
+              class="relative border-4 border-green-500 p-2 bg-black shadow-[0_0_20px_rgba(34,197,94,0.4)] overflow-hidden">
+                <img src="images/profile.jpg" alt="Guilherme Linhares"
+                  class="w-64 h-64 object-cover sepia-[.8] hue-rotate-[60deg] brightness-[1.2] contrast-[1.2]">
+                <div
+                  class="absolute top-0 left-0 w-full h-full bg-green-500/10 pointer-events-none group-hover:bg-transparent">
+                </div>
+                <div
+                  class="absolute bottom-4 left-4 bg-green-500 text-black px-2 text-xs font-bold">
+                    LVL 22</div>
+            </div>
+        </div>
+
+        <div class="max-w-xl space-y-6">
+            <h1 id="glitch-title"
+              class="text-5xl md:text-7xl font-black crt-text leading-none uppercase glitch">
+                Guilherme <br> <span class="bg-green-500 text-black px-2">Linhares</span>
+            </h1>
+
+            <div class="grid grid-cols-2 gap-4 border-t border-green-900 pt-4">
+                <div class="group">
+                    <p class="text-xs text-green-800 uppercase font-bold">Class</p>
+                    <p
+                      class="text-xl crt-text group-hover:text-white transition-colors cursor-default">
+                        WDD-130_STUDENT</p>
+                </div>
+                <div class="group">
+                    <p class="text-xs text-green-800 uppercase font-bold">Subject</p>
+                    <p
+                      class="text-xl crt-text underline decoration-double group-hover:text-white transition-colors cursor-default">
+                        Web Fundamentals</p>
+                </div>
+            </div>
+
+            <!-- PIP-BOY STYLE INTERFACE -->
+            <div class="bg-green-950/20 border-2 border-green-500/50 rounded-lg overflow-hidden">
+                <div class="flex">
+                    <!-- Navigation Menu -->
+                    <div class="w-1/3 border-r border-green-500/30 p-4 bg-green-950/30">
+                        <p class="text-xs text-green-800 uppercase font-bold mb-3">[ STATUS ]</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="pip-nav-item active" onclick="showSection('birth', this)"
+                              onmouseenter="playBeep(300, 0.03)">BIRTH PLACE</div>
+                            <div class="pip-nav-item" onclick="showSection('language', this)"
+                              onmouseenter="playBeep(300, 0.03)">FAV LANGUAGE</div>
+                            <div class="pip-nav-item" onclick="showSection('scripture', this)"
+                              onmouseenter="playBeep(300, 0.03)">SCRIPTURE</div>
+                            <div class="pip-nav-item" onclick="toggleProjects(this)"
+                              onmouseenter="playBeep(300, 0.03)">PROJECTS ▼</div>
+                            <div id="projects-submenu" class="hidden">
+                                <div class="pip-nav-item sub-item"
+                                  onclick="showSection('week01', this); event.stopPropagation();"
+                                  onmouseenter="playBeep(250, 0.02)">Week 01</div>
+                                <div class="pip-nav-item sub-item"
+                                  onclick="showSection('week02', this); event.stopPropagation();"
+                                  onmouseenter="playBeep(250, 0.02)">Week 02</div>
+                                <div class="pip-nav-item sub-item"
+                                  onclick="showSection('week03', this); event.stopPropagation();"
+                                  onmouseenter="playBeep(250, 0.02)">Week 03</div>
+                                <div class="pip-nav-item sub-item"
+                                  onclick="showSection('week04', this); event.stopPropagation();"
+                                  onmouseenter="playBeep(250, 0.02)">Week 04</div>
+                                <div class="pip-nav-item sub-item"
+                                  onclick="showSection('week05', this); event.stopPropagation();"
+                                  onmouseenter="playBeep(250, 0.02)">Week 05</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Display -->
+                    <div class="w-2/3 p-4 min-h-[150px]">
+                        <p class="text-xs text-green-800 uppercase font-bold mb-2">[ DATA LOG ]</p>
+
+                        <div id="birth" class="content-section active">
+                            <p class="text-lg leading-relaxed text-white typewriter-text"
+                              data-text="Origin: Natal, Brazil.">
+                            </p>
+                        </div>
+
+                        <div id="language" class="content-section">
+                            <p class="text-lg leading-relaxed text-white typewriter-text"
+                              data-text="Primary: TypeScript. Secondary: Rust. Proficiency: Full-stack capable. Preference: Node.js and reactive systems.">
+                            </p>
+                        </div>
+
+                        <div id="scripture" class="content-section">
+                            <p class="text-lg leading-relaxed text-white typewriter-text" data-text="Favorite: James 1:5-6 'If any of you lack wisdom, 
+                              let him ask of God, that giveth to all men liberally, 
+                              and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth 
+                              is like a wave of the sea driven with the wind and tossed.'">
+                            </p>
+                        </div>
+
+                        <div id="week01" class="content-section">
+                            <p class="text-lg leading-relaxed text-white typewriter-text" data-text="Week 01: Initial setup complete. 
+                            Environment configured. Git repository initialized. Basic HTML 
+                            structure deployed for favorite-city.html. The subject has chosen Gramado as his favorite city. Developed a 
+                            Pip-Boy-themed homepage that will be updated throughout the course with the basic requirements and also with simple 
+                            css animations and javascript to basic but fun functionalities.">
+                            </p>
+                        </div>
+
+                        <div id="week02" class="content-section">
+                            <p class="text-lg leading-relaxed text-white typewriter-text"
+                              data-text="Week 02: coming soon.">
+                            </p>
+                        </div>
+
+                        <div id="week03" class="content-section">
+                            <p class="text-lg leading-relaxed text-white typewriter-text"
+                              data-text="Week 03: coming soon.">
+                            </p>
+                        </div>
+
+                        <div id="week04" class="content-section">
+                            <p class="text-lg leading-relaxed text-white typewriter-text"
+                              data-text="Week 04: coming soon.">
+                            </p>
+                        </div>
+
+                        <div id="week05" class="content-section">
+                            <p class="text-lg leading-relaxed text-white typewriter-text"
+                              data-text="Week 05: coming soon.">
+                            </p>
+                        </div>
+
+                        <p class="text-sm opacity-50 mt-4 blink">_</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer
+      class="p-4 bg-green-950/10 border-t border-green-900/50 flex justify-between text-[10px] tracking-[0.2em] text-green-800 z-10">
+        <div>wdd130 | Guilherme Linhares</div>
+        <div>LOC: BRAZIL</div>
+    </footer>
+
+    <script>
+        // Web Audio API
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playBeep(freq, duration) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        // Typewriter effect
+        let typeInterval;
+        function typeWriter(element, text) {
+            clearInterval(typeInterval);
+            element.innerHTML = '> ';
+            let i = 0;
+            typeInterval = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    if (Math.random() > 0.8) playBeep(800, 0.005);
+                } else {
+                    clearInterval(typeInterval);
+                }
+            }, 15); // Much faster typing (was 40)
+        }
+
+        // Section navigation
+        function showSection(sectionId, navElement) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active from all nav items
+            document.querySelectorAll('.pip-nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+
+            // Activate nav item
+            if (navElement) navElement.classList.add('active');
+
+            // Play sound
+            playBeep(600, 0.05);
+
+            // Type the content
+            const textElement = selectedSection.querySelector('.typewriter-text');
+            const text = textElement.getAttribute('data-text');
+            typeWriter(textElement, text);
+        }
+
+        // Toggle projects submenu
+        function toggleProjects(navElement) {
+            const submenu = document.getElementById('projects-submenu');
+            submenu.classList.toggle('hidden');
+            playBeep(400, 0.05);
+        }
+
+
+        // Glitch effect
+        const title = document.getElementById('glitch-title');
+        const originalText = title.innerHTML;
+        const glitchOptions = [
+            "GUI_LHERME ERROR_404",
+            "Easter egg",
+            "L1NHARES DATA_CORRUPTED",
+            "GUILHERME UNEXPECTED_TOKEN",
+            "L1NHARES 124934829825",
+            "This is obviously a Fallout Reference",
+            "L1NHARES SYNTAX_ERROR",
+            "GUILHERME ACCESS_DENIED",
+            "L1NHARES",
+            "GUILHERME 0x000",
+            "L1NHARES",
+            "GUILHERME MEMORY_LEAK",
+            "L1NHARES TIMEOUT_ERROR",
+            "GUILHERME CONNECTION_LOST",
+            "0100011101110101011010010110110001101000011001010111001001101101011001010100110001101001011011100110100001100001011100100110010101110011",
+            "GUILHERME DIVIDE_BY_ZERO",
+            "L1NHARES FILE_NOT_FOUND",
+            "GUILHERME PERMISSION_DENIED",
+            "L1NHARES DISK_FULL",
+            "GUILHERME NETWORK_ERROR"
+        ];
+
+        setInterval(() => {
+            if (Math.random() > 0.95) {
+                const randomOption = glitchOptions[Math.floor(Math.random() * glitchOptions.length)];
+                title.innerText = randomOption;
+                setTimeout(() => title.innerHTML = originalText, 150);
+            }
+        }, 2000);
+
+        // Initialize
+        window.onload = () => {
+            setTimeout(() => {
+                const firstSection = document.querySelector('.content-section.active .typewriter-text');
+                typeWriter(firstSection, firstSection.getAttribute('data-text'));
+            }, 500);
+        };
+    </script>
 </body>
+
 </html>
