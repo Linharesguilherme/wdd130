@@ -164,101 +164,101 @@
             </div>
 
             <!-- PIP-BOY STYLE INTERFACE -->
-            <div class="bg-green-950/20 border-2 border-green-500/50 rounded-lg overflow-hidden">
-                <div class="flex">
-                    <!-- Navigation Menu -->
-                    <div class="w-1/3 border-r border-green-500/30 p-4 bg-green-950/30">
-                        <p class="text-xs text-green-800 uppercase font-bold mb-3">[ STATUS ]</p>
-                        <div class="space-y-1 text-sm">
-                            <div class="pip-nav-item active" onclick="showSection('birth', this)"
-                                onmouseenter="playBeep(300, 0.03)">BIRTH PLACE</div>
-                            <div class="pip-nav-item" onclick="showSection('language', this)"
-                                onmouseenter="playBeep(300, 0.03)">FAV LANGUAGE</div>
-                            <div class="pip-nav-item" onclick="showSection('scripture', this)"
-                                onmouseenter="playBeep(300, 0.03)">SCRIPTURE</div>
-                            <div class="pip-nav-item" onclick="toggleProjects(this)"
-                                onmouseenter="playBeep(300, 0.03)">PROJECTS ▼</div>
-                            <div id="projects-submenu" class="hidden">
-                                <div class="pip-nav-item sub-item"
-                                    onclick="showSection('week01', this); event.stopPropagation();"
-                                    onmouseenter="playBeep(250, 0.02)">Week 01</div>
-                                <div class="pip-nav-item sub-item"
-                                    onclick="showSection('week02', this); event.stopPropagation();"
-                                    onmouseenter="playBeep(250, 0.02)">Week 02</div>
-                                <div class="pip-nav-item sub-item"
-                                    onclick="showSection('week03', this); event.stopPropagation();"
-                                    onmouseenter="playBeep(250, 0.02)">Week 03</div>
-                                <div class="pip-nav-item sub-item"
-                                    onclick="showSection('week04', this); event.stopPropagation();"
-                                    onmouseenter="playBeep(250, 0.02)">Week 04</div>
-                                <div class="pip-nav-item sub-item"
-                                    onclick="showSection('week05', this); event.stopPropagation();"
-                                    onmouseenter="playBeep(250, 0.02)">Week 05</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Display -->
-                    <div class="w-2/3 p-4 min-h-[150px]">
-                        <p class="text-xs text-green-800 uppercase font-bold mb-2">[ DATA LOG ]</p>
-
-                        <div id="birth" class="content-section active">
-                            <p class="text-lg leading-relaxed text-white typewriter-text"
-                                data-text="Origin: Natal, Brazil.">
-                            </p>
-                        </div>
-
-                        <div id="language" class="content-section">
-                            <p class="text-lg leading-relaxed text-white typewriter-text"
-                                data-text="Primary: TypeScript. Secondary: Rust. Proficiency: Full-stack capable. Preference: Node.js and reactive systems.">
-                            </p>
-                        </div>
-
-                        <div id="scripture" class="content-section">
-                            <p class="text-lg leading-relaxed text-white typewriter-text" data-text="Favorite: James 1:5-6 'If any of you lack wisdom, 
-                              let him ask of God, that giveth to all men liberally, 
-                              and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth 
-                              is like a wave of the sea driven with the wind and tossed.'">
-                            </p>
-                        </div>
-
-                        <div id="week01" class="content-section">
-                            <p class="text-lg leading-relaxed text-white typewriter-text" data-text="Week 01: Initial setup complete. 
-                            Environment configured. Git repository initialized. Basic HTML 
-                            structure deployed for favorite-city.html. The subject has chosen Gramado as his favorite city. Developed a 
-                            Pip-Boy-themed homepage that will be updated throughout the course with the basic requirements and also with simple 
-                            css animations and javascript to basic but fun functionalities.">
-                            </p>
-                        </div>
-
-                        <div id="week02" class="content-section">
-                            <p class="text-lg leading-relaxed text-white typewriter-text"
-                                data-text="Week 02: coming soon.">
-                            </p>
-                        </div>
-
-                        <div id="week03" class="content-section">
-                            <p class="text-lg leading-relaxed text-white typewriter-text"
-                                data-text="Week 03: coming soon.">
-                            </p>
-                        </div>
-
-                        <div id="week04" class="content-section">
-                            <p class="text-lg leading-relaxed text-white typewriter-text"
-                                data-text="Week 04: coming soon.">
-                            </p>
-                        </div>
-
-                        <div id="week05" class="content-section">
-                            <p class="text-lg leading-relaxed text-white typewriter-text"
-                                data-text="Week 05: coming soon.">
-                            </p>
-                        </div>
-
-                        <p class="text-sm opacity-50 mt-4 blink">_</p>
-                    </div>
+            <div class="bg-green-950/20 border-2 border-green-500/50 rounded-lg overflow-hidden h-[400px]">
+    <div class="flex h-full">
+        <!-- Navigation Menu -->
+        <div class="w-1/3 border-r border-green-500/30 p-4 bg-green-950/30 overflow-y-auto">
+            <p class="text-xs text-green-800 uppercase font-bold mb-3">[ STATUS ]</p>
+            <div class="space-y-1 text-sm">
+                <div class="pip-nav-item active" onclick="showSection('birth', this)"
+                    onmouseenter="playBeep(300, 0.03)">BIRTH PLACE</div>
+                <div class="pip-nav-item" onclick="showSection('language', this)"
+                    onmouseenter="playBeep(300, 0.03)">FAV LANGUAGE</div>
+                <div class="pip-nav-item" onclick="showSection('scripture', this)"
+                    onmouseenter="playBeep(300, 0.03)">SCRIPTURE</div>
+                <div class="pip-nav-item" onclick="toggleProjects(this)"
+                    onmouseenter="playBeep(300, 0.03)">PROJECTS ▼</div>
+                <div id="projects-submenu" class="hidden">
+                    <div class="pip-nav-item sub-item"
+                        onclick="showSection('week01', this); event.stopPropagation();"
+                        onmouseenter="playBeep(250, 0.02)">Week 01</div>
+                    <div class="pip-nav-item sub-item"
+                        onclick="showSection('week02', this); event.stopPropagation();"
+                        onmouseenter="playBeep(250, 0.02)">Week 02</div>
+                    <div class="pip-nav-item sub-item"
+                        onclick="showSection('week03', this); event.stopPropagation();"
+                        onmouseenter="playBeep(250, 0.02)">Week 03</div>
+                    <div class="pip-nav-item sub-item"
+                        onclick="showSection('week04', this); event.stopPropagation();"
+                        onmouseenter="playBeep(250, 0.02)">Week 04</div>
+                    <div class="pip-nav-item sub-item"
+                        onclick="showSection('week05', this); event.stopPropagation();"
+                        onmouseenter="playBeep(250, 0.02)">Week 05</div>
                 </div>
             </div>
+        </div>
+
+        <!-- Content Display -->
+        <div class="w-2/3 p-4 overflow-y-auto">
+            <p class="text-xs text-green-800 uppercase font-bold mb-2">[ DATA LOG ]</p>
+
+            <div id="birth" class="content-section active">
+                <p class="text-lg leading-relaxed text-white typewriter-text"
+                    data-text="Origin: Natal, Brazil.">
+                </p>
+            </div>
+
+            <div id="language" class="content-section">
+                <p class="text-lg leading-relaxed text-white typewriter-text"
+                    data-text="Primary: TypeScript. Secondary: Rust. Proficiency: Full-stack capable. Preference: Node.js and reactive systems.">
+                </p>
+            </div>
+
+            <div id="scripture" class="content-section">
+                <p class="text-lg leading-relaxed text-white typewriter-text" data-text="Favorite: James 1:5-6 'If any of you lack wisdom, 
+                  let him ask of God, that giveth to all men liberally, 
+                  and upbraideth not; and it shall be given him. But let him ask in faith, nothing wavering. For he that wavereth 
+                  is like a wave of the sea driven with the wind and tossed.'">
+                </p>
+            </div>
+
+            <div id="week01" class="content-section">
+                <p class="text-lg leading-relaxed text-white typewriter-text" data-text="Week 01: Initial setup complete. 
+                Environment configured. Git repository initialized. Basic HTML 
+                structure deployed for favorite-city.html. The subject has chosen Gramado as his favorite city. Developed a 
+                Pip-Boy-themed homepage that will be updated throughout the course with the basic requirements and also with simple 
+                css animations and javascript to basic but fun functionalities.">
+                </p>
+            </div>
+
+            <div id="week02" class="content-section">
+                <p class="text-lg leading-relaxed text-white typewriter-text"
+                    data-text="Week 02: coming soon.">
+                </p>
+            </div>
+
+            <div id="week03" class="content-section">
+                <p class="text-lg leading-relaxed text-white typewriter-text"
+                    data-text="Week 03: coming soon.">
+                </p>
+            </div>
+
+            <div id="week04" class="content-section">
+                <p class="text-lg leading-relaxed text-white typewriter-text"
+                    data-text="Week 04: coming soon.">
+                </p>
+            </div>
+
+            <div id="week05" class="content-section">
+                <p class="text-lg leading-relaxed text-white typewriter-text"
+                    data-text="Week 05: coming soon.">
+                </p>
+            </div>
+
+            <p class="text-sm opacity-50 mt-4 blink">_</p>
+        </div>
+    </div>
+</div>
         </div>
 
     </main>
